@@ -212,10 +212,74 @@ var numArray = [4,1,3,2,6,1,5,8,-1,9,"hola","sdklgjksdfjkjgh"];
 
 // Output
 // Output will be the shortened string, e.g., "Friday May 2".
-function shortenToDate(longDate) {
-    // your code here
-    //var longDate=String(longDate)
-    var i_coma=longDate.split('').findIndex(el=>el==',')
-    return longDate.substring(0,i_coma)
+// function shortenToDate(longDate) {
+//     // your code here
+//     //var longDate=String(longDate)
+//     var i_coma=longDate.split('').findIndex(el=>el==',')
+//     return longDate.substring(0,i_coma)
+// }
+// console.log(shortenToDate("Friday May 2, 7pm"))
+
+// -------------------------------------------------------------------------------------------------------------------------
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order.
+//  Essentially, rearrange the digits to create the highest possible number.
+
+// Examples:
+// Input: 42145 Output: 54421
+
+// Input: 145263 Output: 654321
+
+// Input: 123456789 Output: 987654321
+//-------------------------------------------------------------------desde aqui comienza
+// function descendingOrder(n){
+//     arr=parseInt(String(n).split('').sort((a,b)=>b-a).join(''))
+//     return arr
+//   }
+// console.log(descendingOrder(123456789))
+
+// //arrow function
+// const descendingOrder=(n)=>parseInt(String(n).split('').sort((a,b)=>b-a).join(''))
+// console.log(descendingOrder(145263))
+//-------------------------------------------------------------------
+// The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like your help with an application form that will tell prospective members which category they will be placed.
+// To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+// Input
+// Input will consist of a list of pairs. Each pair contains information for a single potential member. Information consists of an integer for the person's age and an integer for the person's handicap.
+// Output
+// Output will consist of a list of string values (in Haskell and C: Open or Senior) stating whether the respective member is to be placed in the senior or open category.
+//-------------------------------------------------------------------desde aqui comienza
+// function openOrSenior(data){
+//   arr=[]
+//   for (const i in data) {
+//     (data[i][0]>=55 && data[i][1]>7)?arr.push("Senior"):arr.push("Open")
+//   }
+//   return arr
+// }
+
+//-------------------------------------------------------------------desde aqui comienza
+// function openOrSenior(data){
+// console.log(openOrSenior([[18, 20],[45, 2],[61, 12],[37, 6],[21, 21],[78, 9]]))
+
+// Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+// Examples:
+
+// * 'abc' =>  ['ab', 'c_']
+// * 'abcdef' => ['ab', 'cd', 'ef']
+
+// function solution(str){
+//    str=str.split('')
+// }
+function solution(str){
+  var arr=[]
+  if(!(str.length%2==0))
+    str=str+"_"
+  str=str.split('')
+  for(var i=0;i<str.length-1;i+=2){
+    if((str.length)%2==0)
+      arr.push(str[i]+str[i+1])
+  }
+  return arr
 }
-console.log(shortenToDate("Friday May 2, 7pm"))
+
+console.log(solution("abcdefg"))
